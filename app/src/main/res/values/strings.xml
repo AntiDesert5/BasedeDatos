@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Base de Datos</string>
+    <string name="longfija">Longitud Fija*</string>
+    <string name="longvar">Longitud Variable*</string>
+    <string name="notablas">No de Tablas*</string>
+    <string name="siguiente">Siguiente</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorAppv</item>
+        <item name="colorPrimaryDark">@color/colorAppa</item>
+        <item name="colorAccent">@color/colorAppm</item>
+        <item name="colorError">@color/colorAppc</item>
+    </style>
+
+    <style name="Margen" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:ems">8</item>
+
+    </style>
+    <style name="Stylelayout" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="CampoTextoPurpura" parent="Theme.AppCompat.Light"><!-- aqui es para cambiar color de linea de editext-->
+        <item name="colorControlNormal">#CE93D8</item>
+        <item name="colorControlActivated">#AB47BC</item>
+        <item name="android:textColorHighlight">#E1BEE7</item>
+    </style>
+</resources>
