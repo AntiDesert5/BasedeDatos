@@ -50,6 +50,17 @@
                         android:hint="@string/longvar"/>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Lineardos"
+                android:gravity="center">
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/btnSiguiente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/siguiente"/>
+            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
