@@ -24,8 +24,12 @@
                     <EditText
                         android:id="@+id/EditTe1"
                         style="@style/Margen"
-                        android:hint="@string/notablas"/>
+                        android:hint="No de Tablas*"
+                        android:inputType="number"/>
                 </android.support.design.widget.TextInputLayout>
+
+
+
                 <android.support.design.button.MaterialButton
 
                     android:id="@+id/material_button"

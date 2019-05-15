@@ -25,13 +25,19 @@ public class Tablas extends AppCompatActivity {
     }
 
     public void noTablas() {
-        int noTablas;
+
+        Bundle extra= getIntent().getExtras();
+        String  d1=extra.getString("dato01");
+
+        noTabla.setText("Total de tablas: "+d1);
+
+        /*int noTablas;
         MainActivity tablas = new MainActivity();
         noTablas = tablas.getNoTablas();
         System.out.println("checa*****: "+noTablas);
         System.out.println("checa*****: "+tablas.getNoTablas());
         String cadena = Integer.toString(noTablas);
-        noTabla.setText(cadena);
+        //noTabla.setText(cadena);*/
     }
 
 }
