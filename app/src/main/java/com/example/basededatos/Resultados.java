@@ -9,20 +9,20 @@ import butterknife.ButterKnife;
 
 public class Resultados extends AppCompatActivity {
 
-    @BindView(R.id.editLV)
-    TextView editLV;
+
+    @BindView(R.id.editLf)
+    TextView editLf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados);
         ButterKnife.bind(this);
+
         Bundle hola = getIntent().getExtras();
-        String d1 = hola.getString("dato01");
-
-
+        String d1 = hola.getString("tabla");
         int x = Integer.parseInt(d1);
+        editLf.setText("Total de tablas: " + x);
 
-        editLV.setText("Total de tablas: " + x);
     }
 }
