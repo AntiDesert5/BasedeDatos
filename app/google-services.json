@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "843872427124",
+    "firebase_url": "https://registros52468.firebaseio.com",
+    "project_id": "registros52468",
+    "storage_bucket": "registros52468.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843872427124:android:454cb81597a390ad",
+        "android_client_info": {
+          "package_name": "com.example.basededatos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843872427124-6b8ce567ggdthag5oeiucoksrcbmadrm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.basededatos",
+            "certificate_hash": "946488056051a5b6e61aff10aff9981c15a4bbb4"
+          }
+        },
+        {
+          "client_id": "843872427124-7sssblr2j01ai0tf1kdf3b21ngh967ds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAasaNdLR5BC4jhcWZ23aEVplHHtLDYGxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843872427124-7sssblr2j01ai0tf1kdf3b21ngh967ds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
