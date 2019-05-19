@@ -1,22 +1,14 @@
 package com.example.basededatos;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.button.MaterialButton;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,15 +23,69 @@ public class Tablas extends AppCompatActivity {
     EditText editLV;
     @BindView(R.id.btnSiguiente)
     MaterialButton btnSiguiente;
+    @BindView(R.id.noTabla2)
+    TextView noTabla2;
+    @BindView(R.id.btnOb)
+    MaterialButton btnOb;
 
     private String TITLE = "tablas";
+
+    int x, i = 1, w = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.log);
         setContentView(R.layout.activity_tablas);
         ButterKnife.bind(this);
         noTablas();
+        btnSiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnOb.setVisibility(View.VISIBLE);
+                btnSiguiente.setVisibility(View.INVISIBLE);
+                Toast.makeText(Tablas.this,"Boton siguiente",Toast.LENGTH_SHORT).show();
+                if (i < x) {
+                    noTabla.setText("Numero de tablas: " + x);
+                    i++;
+                    noTabla2.setText("\tTabla numero:" + i);
+
+                    noTabla2.setText("\tTabla numero:" + i + "\t  Restan: " + (x - i));
+                    String x = editLF.getText().toString();
+                    String y = editLV.getText().toString();
+                    int x2 = Integer.parseInt(x);
+                    int y2 = Integer.parseInt(y);
+
+                    w = w + x2 + y2;
+
+
+                } else if (i == x) {
+                    String x = editLF.getText().toString();
+                    String y = editLV.getText().toString();
+                    int x2 = Integer.parseInt(x);
+                    int y2 = Integer.parseInt(y);
+
+                    w = w + x2 + y2;
+
+                    Intent res = new Intent(Tablas.this, Resultados.class);
+                    String z = Integer.toString(w);
+                    res.putExtra("dato01", z);
+                    startActivity(res);
+                }
+            }
+        });
+        btnOb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnSiguiente.setVisibility(View.VISIBLE);
+                btnOb.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
+
+
     }
 
     public String noTablas() {
@@ -47,57 +93,19 @@ public class Tablas extends AppCompatActivity {
         Bundle extra = getIntent().getExtras();
         String d1 = extra.getString("dato01");
 
-        noTabla.setText("Total de tablas: " + d1);
+
+        btnSiguiente.setVisibility(View.INVISIBLE);
+        x = Integer.parseInt(d1);
+
+        noTabla.setText("Total de tablas: " + x);
+        noTabla2.setText("\tTabla numero:" + i + "\tRestan: " + (x - i));
         return d1;
 
-        /*int noTablas;
-        MainActivity tablas = new MainActivity();
-        noTablas = tablas.getNoTablas();
-        System.out.println("checa*****: "+noTablas);
-        System.out.println("checa*****: "+tablas.getNoTablas());
-        String cadena = Integer.toString(noTablas);
-        //noTabla.setText(cadena);*/
     }
 
-    public void SubirDatos() {
 
 
-    }
-
-    @OnClick(R.id.btnSiguiente)
-    public void onViewClicked() {
-        String tabla=noTablas();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference reference = database.getReference(TITLE).child(tabla);
-        List<String> al = new ArrayList<String>();
 
 
-        reference.push().setValue(al);//aqui poner los datos para subirlos a base de datos
-        reference.addChildEventListener(new ChildEventListener() {//para cambios en la base de datos
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {//si se añadio
 
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {//si cambia
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 }

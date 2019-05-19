@@ -3,8 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorAppv">#399F10</color>
-    <color name="colorAppa">#10819F</color>
+    <color name="colorAppv">#7c43bd</color>
+    <color name="colorAppa">#000</color>
     <color name="colorAppm">#76109F</color>
     <color name="colorAppc">#9F2E10</color>
 </resources>
