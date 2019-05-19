@@ -16,13 +16,7 @@
         android:layout_marginBottom="15dp">
 
         <TextView
-            android:id="@+id/Tabla"
-            style="@style/Margen" />
-        <TextView
             android:id="@+id/editLf"
-            style="@style/Margen" />
-        <TextView
-            android:id="@+id/editLv"
             style="@style/Margen" />
 
 
