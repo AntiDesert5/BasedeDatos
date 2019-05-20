@@ -175,6 +175,7 @@ public class Tablas extends AppCompatActivity {
             }
 
             result(sum, sum2, contt, contvar);
+            v.setEnabled(false);
         }
 
     }
