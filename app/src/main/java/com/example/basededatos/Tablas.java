@@ -173,15 +173,20 @@ public class Tablas extends AppCompatActivity {
 
     public void result(int resulfijo, int resulvar, int numtotal, int contvar) {//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
         System.out.println("fijo:" + resulfijo + "var:" + resulvar + "filas: " + numtotal + "contvar: " + contvar);
-        long num_rowa = 1000;
-        int nullmap = (int) 2 + ((numtotal + 7) / 8);
-        long Variable_Data_Size = 2 + (contvar * 2) + resulvar;
-        long Row_size = resulfijo + Variable_Data_Size + nullmap + 4;
-        long Rows_per_page = (long) (8096 * x) / (Row_size + 2);
-        long redondeado= num_rowa / Rows_per_page;
-        long Num_pages = (long)Math.rint(redondeado);
+        double num_rowa = 1000;
+        double nullmap = (int) 2 + ((numtotal + 7) / 8);
+        double Variable_Data_Size = 2 + (contvar * 2) + resulvar;
+        double Row_size = resulfijo + Variable_Data_Size + nullmap + 4;
+        double Rows_per_page = (double) (8096 * x) / (Row_size + 2);
+        double redondeado= num_rowa / Rows_per_page;
+        double Num_pages =(double) Math.ceil(redondeado);  //(long)Math.rint(redondeado);
         double monton = (8192 * x) * Num_pages;
 
+        double gato=1.8;
+        double aver=Math.ceil(gato);
+        System.out.println("resultado***********"+aver);
+
+        System.out.println("red: " + redondeado);
         System.out.println("rows_Per_Page: " + Num_pages);
         String totalString = String.valueOf(monton);
         monton1.setText("El Total del Monton es: "+totalString);
