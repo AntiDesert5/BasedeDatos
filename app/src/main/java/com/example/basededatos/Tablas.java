@@ -167,8 +167,6 @@ public class Tablas extends AppCompatActivity {
             }
 
             result(sum,sum2,contt,contvar);
-            Edifijo(sum);
-            Editvar(sum2);
         }
 
     }
@@ -176,7 +174,8 @@ public class Tablas extends AppCompatActivity {
 
     public void result(int resulfijo,int resulvar,int numtotal,int contvar){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
         System.out.println("fijo:"+resulfijo+"var:"+resulvar+"filas: "+numtotal+"contvar: "+contvar);
-        double nullmap=2+((Num_col))
+        int nullmap=(int)2+((numtotal+7)/8);
+        System.out.println("nullmap: "+nullmap);
 
 
     }
