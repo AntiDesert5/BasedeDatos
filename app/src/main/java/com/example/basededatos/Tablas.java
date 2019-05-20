@@ -51,6 +51,9 @@ public class Tablas extends AppCompatActivity {
     int contobt = 0;
     int x;
     int auxx = 1;
+    int sum=0;
+    int sum2=0;
+    int contt=0;
     @BindView(R.id.Linearcinco)
     LinearLayout Linearcinco;
 
@@ -76,7 +79,7 @@ public class Tablas extends AppCompatActivity {
 
         int numfija = Integer.parseInt(fija.getText().toString());
         int numvar = Integer.parseInt(var.getText().toString());
-
+        contt+=numfija+numvar;
         for (int i = 0; i < numfija; i++) {
 
             et = new EditText(Tablas.this);
@@ -143,8 +146,7 @@ public class Tablas extends AppCompatActivity {
         public void onClick(View v)
         {
 
-            int sum=0;
-            int sum2=0;
+
             for (int i = 0; i < Editextsfijo.size(); i++) {
                 EditText aux = Editextsfijo.get(i);
                 String dat=aux.getText().toString();
@@ -161,15 +163,26 @@ public class Tablas extends AppCompatActivity {
                 System.out.println(aux.getText().toString());
                 System.out.println("Resu2"+sum2);
             }
-            result(sum,sum2);
-            Intent inteuno = new Intent(Tablas.this, Resultados.class);
-            startActivity(inteuno);
+            int a= Integer.parseInt(fija.getText().toString());
+            int b= Integer.parseInt(var.getText().toString());
+            result(sum,sum2,contt);
+            Edifijo(sum);
+            Editvar(sum2);
         }
 
     }
 
-    public void result(int resul1,int result2){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
-        System.out.println("fijo:"+resul1+"var:"+result2);
+    public int  Edifijo(int fijo){
+
+        return fijo;
+    }
+    public int Editvar(int var){
+
+        return var;
+    }
+    public void result(int resul1,int result2,int filas){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
+        System.out.println("fijo:"+resul1+"var:"+result2+"filas: "+filas);
+
 
     }
     @OnClick({R.id.btnOb, R.id.btnSiguiente})
