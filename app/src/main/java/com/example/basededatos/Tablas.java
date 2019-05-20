@@ -54,6 +54,7 @@ public class Tablas extends AppCompatActivity {
     int sum=0;
     int sum2=0;
     int contt=0;
+    int contvar=0;
     @BindView(R.id.Linearcinco)
     LinearLayout Linearcinco;
 
@@ -80,6 +81,7 @@ public class Tablas extends AppCompatActivity {
         int numfija = Integer.parseInt(fija.getText().toString());
         int numvar = Integer.parseInt(var.getText().toString());
         contt+=numfija+numvar;
+        contvar+=numvar;
         for (int i = 0; i < numfija; i++) {
 
             et = new EditText(Tablas.this);
@@ -163,25 +165,18 @@ public class Tablas extends AppCompatActivity {
                 System.out.println(aux.getText().toString());
                 System.out.println("Resu2"+sum2);
             }
-            int a= Integer.parseInt(fija.getText().toString());
-            int b= Integer.parseInt(var.getText().toString());
-            result(sum,sum2,contt);
+
+            result(sum,sum2,contt,contvar);
             Edifijo(sum);
             Editvar(sum2);
         }
 
     }
 
-    public int  Edifijo(int fijo){
 
-        return fijo;
-    }
-    public int Editvar(int var){
-
-        return var;
-    }
-    public void result(int resul1,int result2,int filas){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
-        System.out.println("fijo:"+resul1+"var:"+result2+"filas: "+filas);
+    public void result(int resulfijo,int resulvar,int numtotal,int contvar){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
+        System.out.println("fijo:"+resulfijo+"var:"+resulvar+"filas: "+numtotal+"contvar: "+contvar);
+        double nullmap=2+((Num_col))
 
 
     }
