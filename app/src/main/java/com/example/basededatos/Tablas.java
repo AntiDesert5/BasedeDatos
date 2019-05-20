@@ -49,7 +49,7 @@ public class Tablas extends AppCompatActivity {
     int cont = 1;
     int contobt = 0;
     int x;
-    int auxx = 1;
+    int auxx = 0;
     int sum = 0;
     int sum2 = 0;
     int contt = 0;
@@ -77,6 +77,15 @@ public class Tablas extends AppCompatActivity {
     }
 
     public void obtener() {
+
+        if (auxx < x) {
+            noTabla.setText("Numero de tablas: " + x);
+            auxx++;
+            noTabla2.setText("\tTabla numero:" + auxx);
+
+
+            noTabla2.setText("\tTabla numero:" + auxx + "\t  Restan: " + (x - auxx));
+        }
 
         btnOb.setEnabled(false);
         int numfija = Integer.parseInt(fija.getText().toString());
@@ -166,6 +175,7 @@ public class Tablas extends AppCompatActivity {
             }
 
             result(sum, sum2, contt, contvar);
+            v.setEnabled(false);
         }
 
     }
