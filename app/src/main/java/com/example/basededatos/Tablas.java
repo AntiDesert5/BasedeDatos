@@ -1,6 +1,5 @@
 package com.example.basededatos;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.button.MaterialButton;
 import android.support.v7.app.ActionBar;
@@ -51,12 +50,14 @@ public class Tablas extends AppCompatActivity {
     int contobt = 0;
     int x;
     int auxx = 1;
-    int sum=0;
-    int sum2=0;
-    int contt=0;
-    int contvar=0;
+    int sum = 0;
+    int sum2 = 0;
+    int contt = 0;
+    int contvar = 0;
     @BindView(R.id.Linearcinco)
     LinearLayout Linearcinco;
+    @BindView(R.id.monton1)
+    TextView monton1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +81,8 @@ public class Tablas extends AppCompatActivity {
 
         int numfija = Integer.parseInt(fija.getText().toString());
         int numvar = Integer.parseInt(var.getText().toString());
-        contt+=numfija+numvar;
-        contvar+=numvar;
+        contt += numfija + numvar;
+        contvar += numvar;
         for (int i = 0; i < numfija; i++) {
 
             et = new EditText(Tablas.this);
@@ -142,53 +143,55 @@ public class Tablas extends AppCompatActivity {
         Linearcinco.addView(button);
     }
 
-    class ButtonsOnClickListener implements View.OnClickListener
-    {
+    class ButtonsOnClickListener implements View.OnClickListener {
         @Override
-        public void onClick(View v)
-        {
+        public void onClick(View v) {
 
 
             for (int i = 0; i < Editextsfijo.size(); i++) {
                 EditText aux = Editextsfijo.get(i);
-                String dat=aux.getText().toString();
+                String dat = aux.getText().toString();
                 int entero = Integer.parseInt(dat);
-                sum+=entero;
+                sum += entero;
 
                 System.out.println(aux.getText().toString());
-                System.out.println("Resu1"+sum);
+                System.out.println("Resu1" + sum);
             }
             for (int i = 0; i < Editextsvar.size(); i++) {
                 EditText aux = Editextsvar.get(i);
                 int entero = Integer.parseInt(aux.getText().toString());
-                sum2+=entero;
+                sum2 += entero;
                 System.out.println(aux.getText().toString());
-                System.out.println("Resu2"+sum2);
+                System.out.println("Resu2" + sum2);
             }
 
-            result(sum,sum2,contt,contvar);
+            result(sum, sum2, contt, contvar);
         }
 
     }
 
 
-    public void result(int resulfijo,int resulvar,int numtotal,int contvar){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
-        System.out.println("fijo:"+resulfijo+"var:"+resulvar+"filas: "+numtotal+"contvar: "+contvar);
-        long num_rowa=1000;
-        int nullmap=(int)2+((numtotal+7)/8);
-        long Variable_Data_Size=2+(contvar*2)+resulvar;
-        long Row_size=resulfijo+Variable_Data_Size+nullmap+4;
-        long Rows_per_page=(long)(8096*x)/(Row_size+2);
-        long Num_pages=(long)num_rowa/Rows_per_page;
-        double monton=(8192*x)*Num_pages;
+    public void result(int resulfijo, int resulvar, int numtotal, int contvar) {//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
+        System.out.println("fijo:" + resulfijo + "var:" + resulvar + "filas: " + numtotal + "contvar: " + contvar);
+        long num_rowa = 1000;
+        int nullmap = (int) 2 + ((numtotal + 7) / 8);
+        long Variable_Data_Size = 2 + (contvar * 2) + resulvar;
+        long Row_size = resulfijo + Variable_Data_Size + nullmap + 4;
+        long Rows_per_page = (long) (8096 * x) / (Row_size + 2);
+        long redondeado= num_rowa / Rows_per_page;
+        long Num_pages = (long)Math.rint(redondeado);
+        double monton = (8192 * x) * Num_pages;
 
-        System.out.println("rows_Per_Page: "+monton);
+        System.out.println("rows_Per_Page: " + Num_pages);
+        String totalString = String.valueOf(monton);
+        monton1.setText("El Total del Monton es: "+totalString);
+
 
 
     }
+
     @OnClick({R.id.btnOb, R.id.btnSiguiente})
     public void onViewClicked(View view) {
-
 
 
         switch (view.getId()) {
