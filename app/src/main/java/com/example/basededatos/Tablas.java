@@ -78,7 +78,7 @@ public class Tablas extends AppCompatActivity {
 
     public void obtener() {
 
-
+        btnOb.setEnabled(false);
         int numfija = Integer.parseInt(fija.getText().toString());
         int numvar = Integer.parseInt(var.getText().toString());
         contt += numfija + numvar;
@@ -220,7 +220,7 @@ public class Tablas extends AppCompatActivity {
                 LinearVariable.removeAllViews();
                 fija.getText().clear();
                 var.getText().clear();
-
+                btnOb.setEnabled(true);
                 for (int i = 0; i < Editextsfijo.size(); i++) {
                     EditText aux = Editextsfijo.get(i);
                     System.out.println(aux.getText().toString());
