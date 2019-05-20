@@ -174,10 +174,15 @@ public class Tablas extends AppCompatActivity {
 
     public void result(int resulfijo,int resulvar,int numtotal,int contvar){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
         System.out.println("fijo:"+resulfijo+"var:"+resulvar+"filas: "+numtotal+"contvar: "+contvar);
+        long num_rowa=1000;
         int nullmap=(int)2+((numtotal+7)/8);
         long Variable_Data_Size=2+(contvar*2)+resulvar;
+        long Row_size=resulfijo+Variable_Data_Size+nullmap+4;
+        long Rows_per_page=(long)(8096*x)/(Row_size+2);
+        long Num_pages=(long)num_rowa/Rows_per_page;
+        double monton=(8192*x)*Num_pages;
 
-        System.out.println("nullmap: "+Variable_Data_Size);
+        System.out.println("rows_Per_Page: "+monton);
 
 
     }
