@@ -1,5 +1,6 @@
 package com.example.basededatos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.button.MaterialButton;
 import android.support.v7.app.ActionBar;
@@ -103,6 +104,7 @@ public class Tablas extends AppCompatActivity {
             auxx++;
             noTabla2.setText("\tTabla numero:" + cont);
 
+
             noTabla2.setText("\tTabla numero:" + cont + "\t  Restan: " + (x - cont));
         }
 
@@ -124,6 +126,7 @@ public class Tablas extends AppCompatActivity {
             Editextsvar.add(et);
             LinearVariable.addView(et);
         }
+
     }
 
     public void buttonaceptar() {
@@ -159,6 +162,8 @@ public class Tablas extends AppCompatActivity {
                 System.out.println("Resu2"+sum2);
             }
             result(sum,sum2);
+            Intent inteuno = new Intent(Tablas.this, Resultados.class);
+            startActivity(inteuno);
         }
 
     }
@@ -180,6 +185,10 @@ public class Tablas extends AppCompatActivity {
                 }
                 if (contobt == 1) {
                     obtener();
+                    if (cont == x) {
+                        btnSiguiente.setEnabled(false);
+                        buttonaceptar();
+                    }
                 } else {
                     obtener();
                 }

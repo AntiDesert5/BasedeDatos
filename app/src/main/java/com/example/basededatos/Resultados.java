@@ -19,10 +19,7 @@ public class Resultados extends AppCompatActivity {
         setContentView(R.layout.activity_resultados);
         ButterKnife.bind(this);
 
-        Bundle hola = getIntent().getExtras();
-        String d1 = hola.getString("tabla");
-        int x = Integer.parseInt(d1);
-        editLf.setText("Total de tablas: " + x);
+
 
     }
 }
