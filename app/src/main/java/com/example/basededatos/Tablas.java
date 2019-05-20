@@ -175,7 +175,9 @@ public class Tablas extends AppCompatActivity {
     public void result(int resulfijo,int resulvar,int numtotal,int contvar){//este es el importante aqui ya estan sumados los datos y separados en fijos y variables
         System.out.println("fijo:"+resulfijo+"var:"+resulvar+"filas: "+numtotal+"contvar: "+contvar);
         int nullmap=(int)2+((numtotal+7)/8);
-        System.out.println("nullmap: "+nullmap);
+        long Variable_Data_Size=2+(contvar*2)+resulvar;
+
+        System.out.println("nullmap: "+Variable_Data_Size);
 
 
     }
