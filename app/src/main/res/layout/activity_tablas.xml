@@ -32,239 +32,51 @@
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/Lineardos"
-                style="@style/Stylelayout"
-                android:gravity="center"
-                android:layout_below="@+id/Linearuno">
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/edit1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/editLF"
-                        style="@style/Margen"
-                        android:hint="@string/longfija"
-                        android:inputType="number"
-                        />
-                </android.support.design.widget.TextInputLayout>
-
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/edit2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/editLV"
-                        style="@style/Margen"
-                        android:hint="@string/longvar"
-                        android:inputType="number"/>
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/hijotres"
+                android:layout_below="@+id/Linearuno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/Lineardos">
-
-                <LinearLayout
-                    android:id="@+id/Lineartres"
+                android:gravity="center">
+                <EditText
+                    android:id="@+id/fija"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:hint="@string/longfija"/>
+                <EditText
+                    android:id="@+id/var"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/longvar"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Lineartres"
+                android:layout_below="@+id/Lineardos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/LinearFija"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical">
-                    <android.support.design.widget.TextInputLayout
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lf1"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lf2"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lf3"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lf4"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lf5"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"/>
-                        <android.support.design.widget.TextInputLayout
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                            <EditText
-                                android:id="@+id/lf6"
-                                style="@style/Margen"
-                                android:hint="Ingresa Valor"
-                                />
-                        </android.support.design.widget.TextInputLayout>
-                        <android.support.design.widget.TextInputLayout
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                            <EditText
-                                android:id="@+id/lf7"
-                                style="@style/Margen"
-                                android:hint="Ingresa Valor"
-                                />
-                        </android.support.design.widget.TextInputLayout>
-                        <android.support.design.widget.TextInputLayout
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                            <EditText
-                                android:id="@+id/lf8"
-                                style="@style/Margen"
-                                android:hint="Ingresa Valor"
-                                />
-                        </android.support.design.widget.TextInputLayout>
-                        <android.support.design.widget.TextInputLayout
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                            <EditText
-                                android:id="@+id/lf9"
-                                style="@style/Margen"
-                                android:hint="Ingresa Valor"
-                                />
-                        </android.support.design.widget.TextInputLayout>
-                            />
-                    </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/LinearVariable"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-                    <android.support.design.widget.TextInputLayout
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv1"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv2"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv3"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv4"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv5"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv6"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv7"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv8"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <EditText
-                            android:id="@+id/lv9"
-                            style="@style/Margen"
-                            android:hint="Ingresa Valor"
-                            />
-                    </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
-
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/segundo"
+                android:id="@+id/Linearcuatro"
+                android:layout_below="@+id/Lineartres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/hijotres"
+
                 android:gravity="center">
                 <android.support.design.button.MaterialButton
                     android:id="@+id/btnOb"
@@ -276,6 +88,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/siguiente"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/Linearcinco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Linearcuatro">
 
             </LinearLayout>
 
